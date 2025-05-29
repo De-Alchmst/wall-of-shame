@@ -23,14 +23,14 @@ function drawInsult(text) {
     // Calculate random position within center region
     const x = Math.random() * maxOffsetX;
     const y = Math.random() * (maxOffsetY - YOffset) + YOffset;
-    const rotation = (Math.random() - 0.5); // Random rotation between -0.5 and 0.5 radians
+    const rotation = (Math.random() - 0.5);
 
     // Generate random RGB values between 30 and 200 to ensure readability
     const r = Math.floor(Math.random() * 170 + 30);
     const g = Math.floor(Math.random() * 170 + 30);
     const b = Math.floor(Math.random() * 170 + 30);
 
-    ctx.save(); // Save the current context state
+    ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rotation);
     
@@ -38,10 +38,12 @@ function drawInsult(text) {
     ctx.font = '20px Arial';
     ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
     
-    // Draw the text
     ctx.fillText(text, 0, 0);
     
-    ctx.restore(); // Restore the context state
+    ctx.restore();
+
+    speak(text);
+
 }
 
 async function addNewInsult() {
@@ -51,12 +53,14 @@ async function addNewInsult() {
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
-;;;;;;(async () => {
-   while (true) {
-      // Initial call
-      addNewInsult();
+document.getElementById('startButton').addEventListener('click', async () => {
+    document.getElementById('startButton').style.display = 'none';
+    document.getElementById('disclaimer').style.display = 'none';
+    
+    while (true) {
+        addNewInsult();
 
-      // Random interval between 1 and 6 seconds
-      await sleep(1000 + Math.random() * 3000);
-   }
-})();
+        // Random interval between 1 and 6 seconds
+        await sleep(1000 + Math.random() * 3000);
+    }
+});

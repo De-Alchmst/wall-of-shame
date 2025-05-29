@@ -19,10 +19,29 @@
                height: 80%;
                display: flex;
          }
+         #startButton {
+             position: absolute;
+             text-align: center;
+             top: 20px;
+             padding: 10px 20px;
+             font-size: 16px;
+             cursor: pointer;
+         }
+         #disclaimer {
+             position: absolute;
+             bottom: 20px;
+             text-align: center;
+             width: 100%;
+             font-size: 17px;
+             color: red;
+         }
     </style>
     <script src="script.js" defer></script>
+    <script src="tts.js" defer></script>
 </head>
 <body>
-      <canvas></canvas>
+   <button id="startButton">Start The Wall Of Shame</button>
+   <canvas></canvas>
+   <p id="disclaimer">Beware: Speech synthesis might not work in all browsers!</p>
 </body>
 </html>
