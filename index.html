@@ -51,7 +51,7 @@ async function speak(text) {
     }
 
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.9;  // Slightly slower than default
+    utterance.rate = 0.8;  // Slightly slower than default
     utterance.pitch = 1;   // Normal pitch
     
     window.speechSynthesis.speak(utterance);
