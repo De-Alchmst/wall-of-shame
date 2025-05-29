@@ -3,4 +3,4 @@ Wall of shame will shame anyone you send it to.
 Now in portable single-file version.
 
 Or try it
-[online](unit37.duckdns.org/wall-of-shame)
+[online](https://unit37.duckdns.org/wall-of-shame)
